@@ -41,20 +41,20 @@ $kartvizit-project-theme-dark: mat.define-dark-theme((color: (primary: $kartvizi
 
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .theme-dark {
-  @include mat.all-component-themes($kartvizit-project-theme-dark);
+    @include mat.all-component-themes($kartvizit-project-theme-dark);
 }
 
 .theme-light {
-  @include mat.all-component-themes($kartvizit-project-theme);
+    @include mat.all-component-themes($kartvizit-project-theme);
 }
 
 // ------------------------------------------------
@@ -72,29 +72,29 @@ $purple-color: #7b1fa2;
 $green-color: #69f0ae;
 
 main {
-  padding: 32px;
+    padding: 32px;
 
-  .page-title {
-    font-size: 3rem;
-    // color: $purple-color;
-  }
+    .page-title {
+        font-size: 3rem;
+        // color: $purple-color;
+    }
 
-  .page-description {
-    font-size: 1rem;
-    // color: $green-color;
-  }
+    .page-description {
+        font-size: 1rem;
+        // color: $green-color;
+    }
 }
 
 // mor #7b1fa2
 // açık yeşil #69f0ae
 .mat-snack-bar-container {
-  color: rgb(32, 33, 36);
+    color: rgb(32, 33, 36);
 
-  &.success {
-    background-color: $green-color;
-  }
+    &.success {
+        background-color: $green-color;
+    }
 
-  &.error {
-    background-color: $purple-color;
-  }
+    &.error {
+        background-color: $purple-color;
+    }
 }

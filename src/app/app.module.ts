@@ -18,23 +18,23 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatToolbarModule,
-    // MatSidenavModule,
-    MatSnackBarModule,
-    MatSlideToggleModule,
-    MatSidenavModule
-  ],
-  providers: [{
-    provide: 'apiUrl',
-    useValue: 'https://demo.limantech.com/cards/public/api'
-  }],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatToolbarModule,
+        // MatSidenavModule,
+        MatSnackBarModule,
+        MatSlideToggleModule,
+        MatSidenavModule
+    ],
+    providers: [{
+        provide: 'apiUrl',
+        useValue: 'https://demo.limantech.com/cards/public/api'
+    }],
+    bootstrap: [AppComponent],
 })
 export class AppModule {
 }
