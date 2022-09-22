@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>{{data ? 'Kartvizit Düzenle' : 'Kartvizit Ekle'}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="showSpinner">
+    <mat-progress-bar mode="buffer"></mat-progress-bar>
+    <br>
+  </div>
+  <form [formGroup]="cardForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Phone</mat-label>
+      <input formControlName="phone" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Address</mat-label>
+      <textarea formControlName="address" matInput></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div *ngIf="data" class="flex-grow-1 text-start">
+    <button (click)="deleteCard()" [disabled]="showSpinner" color="warn" mat-stroked-button>Sil</button>
+  </div>
+  <div>
+    <button color="" mat-button mat-dialog-close>İptal</button>
+    <button (click)="data ? updateCard(): addCard()" [disabled]="cardForm.invalid || showSpinner" color="primary"
+            mat-flat-button>{{data ? 'Kartı Düzenle' : 'Kart Ekle'}}</button>
+    <!--    <button mat-button *ngIf="data">Kart Ekle</button>-->
+    <!--    <button mat-button *ngIf="!data">Kartı Düzenle</button>-->
+  </div>
+
+</mat-dialog-actions>

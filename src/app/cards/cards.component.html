@@ -1,0 +1,63 @@
+<main>
+
+    <div class="d-flex align-items-center">
+
+        <div class="flex-grow-1">
+            <h1 class="page-title">Kartvizitler</h1>
+            <p class="page-description">Kartvizit Yönetimi.</p>
+        </div>
+
+        <div>
+            <app-card-search></app-card-search>
+
+            <button (click)="deleteAllCards()" color="accent" mat-flat-button style="margin-left: 1rem;">Tüm
+                Kartvizitleri Sil
+            </button>
+
+
+            <button (click)="openAddCardModal()" color="accent" mat-flat-button style="margin-left: 1rem;">Yeni
+                Kartvizit Ekle
+            </button>
+        </div>
+
+
+    </div>
+    <hr>
+
+    <!--  <div *ngIf="showSpinner">-->
+    <!--    <mat-progress-bar mode="buffer"></mat-progress-bar>-->
+    <!--    <br>-->
+    <!--  </div>-->
+
+    <div class="cards">
+
+        <div class="row">
+
+            <div *ngIf="!cardService.cards" class="col-12">
+                <span>Kartvizitler yükleniyor. Lütfen bekleyiniz.</span>
+            </div>
+
+            <div *ngIf="cardService.cards?.length === 0" class="col-12">
+                <span>Henüz kartvizit eklemediniz. <a (click)="openAddCardModal()" color="accent" mat-flat-button>Buraya
+                        tıklayarak</a> ilk kartvizitinizi ekleyebilirsiniz.</span>
+            </div>
+
+            <div *ngFor="let card of cardService.filteredCards"
+                 class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+                <app-card-item [card]="card"></app-card-item>
+            </div>
+            <!-- <div class="card h-100" style="width: 18rem;">
+                    <img class="card-img-top" src="../../favicon.ico" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title">Name</h6>
+                        <p class="card-text"><small class="text-muted">Bundle</small></p>
+                        <a href="#" class="btn btn-primary">Go</a>
+                    </div>
+            </div> -->
+        </div>
+
+    </div>
+    <!-- <div class="col-12 col-md-4">deneme</div> -->
+    <!-- </div> -->
+
+</main>

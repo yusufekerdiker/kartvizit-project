@@ -1,0 +1,13 @@
+.card-item {
+  margin-bottom: 30px;
+}
+
+::ng-deep .header .mat-card-header-text{
+  display: none;
+  margin: 0;
+}
+
+// .example-header-image {
+//     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+//     background-size: cover;
+// }

@@ -1,1 +1,100 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$kartvizit-project-primary: mat.define-palette(mat.$indigo-palette);
+$kartvizit-project-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$kartvizit-project-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$kartvizit-project-theme: mat.define-light-theme((color: (primary: $kartvizit-project-primary, accent: $kartvizit-project-accent, warn: $kartvizit-project-warn)));
+
+$kartvizit-project-theme-dark: mat.define-dark-theme((color: (primary: $kartvizit-project-primary, accent: $kartvizit-project-accent, warn: $kartvizit-project-warn)));
+
+/*$kartvizit-project-dark-theme: mat.define-dark-theme((color: (primary: $kartvizit-project-primary,
+  accent: $kartvizit-project-accent,
+  warn: $kartvizit-project-warn,
+)));
+
+.dark-theme {
+  @include mat.all-component-themes($kartvizit-project-dark-theme);
+}*/
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($kartvizit-project-theme-dark);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.theme-dark {
+  @include mat.all-component-themes($kartvizit-project-theme-dark);
+}
+
+.theme-light {
+  @include mat.all-component-themes($kartvizit-project-theme);
+}
+
+// ------------------------------------------------
+/*
+html body.theme-light app-root.theme-dark div.mat-app-background app-cards.ng-star-inserted main div.cards div.row div.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.col-xxl-3.ng-star-inserted app-card-item mat-card.mat-card.mat-focus-indicator.card-item mat-card-header.mat-card-header div.mat-card-header-text
+{
+  z-index: 0;
+  margin: 10px;
+  padding: 0;
+}*/
+
+//@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+
+$purple-color: #7b1fa2;
+$green-color: #69f0ae;
+
+main {
+  padding: 32px;
+
+  .page-title {
+    font-size: 3rem;
+    // color: $purple-color;
+  }
+
+  .page-description {
+    font-size: 1rem;
+    // color: $green-color;
+  }
+}
+
+// mor #7b1fa2
+// açık yeşil #69f0ae
+.mat-snack-bar-container {
+  color: rgb(32, 33, 36);
+
+  &.success {
+    background-color: $green-color;
+  }
+
+  &.error {
+    background-color: $purple-color;
+  }
+}

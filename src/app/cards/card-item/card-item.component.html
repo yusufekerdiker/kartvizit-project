@@ -1,0 +1,105 @@
+<mat-card class="card-item">
+
+    <mat-card-header class="d-flex header justify-content-between">
+
+        <div>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title *ngIf="card.name; else noName">{{card.name}}</mat-card-title>
+            <ng-template #noName>
+                <mat-list-item class="text-danger fw-bold" text>İsim yok!</mat-list-item>
+            </ng-template>
+            <mat-card-subtitle>{{card.title}}</mat-card-subtitle>
+        </div>
+
+        <div>
+            <mat-card-actions>
+                <button (click)="openUpdateCardModal(card)" aria-label="Example icon-button with edit icon"
+                        class="example-icon"
+                        mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="copyCardIconButton()" aria-label="Example icon-button with copy icon"
+                        class="example-icon"
+                        mat-icon-button>
+                    <mat-icon>content_copy</mat-icon>
+                </button>
+                <button (click)="deleteCardIconButton()" aria-label="Example icon-button with delete icon"
+                        class="example-icon"
+                        mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-card-actions>
+        </div>
+
+    </mat-card-header>
+
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+        <!-- <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+            </p> -->
+        <!--<ul class="list-group list-group-flush">
+            <li class="list-group-item bg-dark text-primary">{{card.phone}}</li>
+
+            &lt;!&ndash;            yol 1&ndash;&gt;
+            <li class="list-group-item bg-dark text-primary" *ngIf="card.email; else noEmail">{{card.email}}</li>
+            <ng-template #noEmail>
+                <small class="text-warning p-2">E-posta yok!</small>
+            </ng-template>
+
+            &lt;!&ndash;            yol 2&ndash;&gt;
+            <li class="list-group-item bg-dark text-primary">
+                <span *ngIf="card.address">{{card.address}}</span>
+                <small class="text-warning p-2" *ngIf="!card.address">Address Yok!</small>
+            </li>-->
+        <mat-list>
+            <mat-list-item>{{card.phone}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <!--            yol 1-->
+            <mat-list-item *ngIf="card.email; else noEmail">{{card.email}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <ng-template #noEmail>
+                <mat-list-item class="text-danger" text>E-posta yok!</mat-list-item>
+            </ng-template>
+            <!--            yol 2-->
+            <mat-list-item *ngIf="card.address; else noAddress">{{card.address}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <ng-template #noAddress>
+                <mat-list-item class="text-danger">Adres Yok!</mat-list-item>
+            </ng-template>
+            <!--
+                       <li class="list-group-item bg-dark text-primary" *ngIf="cards.company">{{cards.company}}</li>
+                       <li class="list-group-item bg-dark text-primary" *ngIf="cards.linkedin">{{cards.linkedin}}</li>
+                       <li class="list-group-item bg-dark text-primary" *ngIf="cards.github">{{cards.github}}</li>
+                       <li class="list-group-item bg-dark text-primary" *ngIf="cards.badgio">{{cards.badgio}}</li> -->
+        </mat-list>
+
+        <!--bootstrap edition
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> mat-
+                {{card.phone}}</li>
+              &lt;!&ndash;            yol 1&ndash;&gt;
+              <li *ngIf="card.email; else noEmail" class="list-group-item">{{card.email}}</li>
+              <ng-template #noEmail>
+                <li class="list-group-item text-warning p-2">E-posta yok!</li>
+              </ng-template>
+              &lt;!&ndash;            yol 2&ndash;&gt;
+              <li *ngIf="card.address; else noAddress" class="list-group-item">{{card.address}}</li>
+              <ng-template #noAddress>
+                <li class="list-group-item text-warning p-2">Adres Yok!</li>
+              </ng-template>
+              &lt;!&ndash;
+                         <li class="list-group-item bg-dark text-primary" *ngIf="cards.company">{{cards.company}}</li>
+                         <li class="list-group-item bg-dark text-primary" *ngIf="cards.linkedin">{{cards.linkedin}}</li>
+                         <li class="list-group-item bg-dark text-primary" *ngIf="cards.github">{{cards.github}}</li>
+                         <li class="list-group-item bg-dark text-primary" *ngIf="cards.badgio">{{cards.badgio}}</li> &ndash;&gt;
+            </ul>-->
+    </mat-card-content>
+    <!-- <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions> -->
+</mat-card>

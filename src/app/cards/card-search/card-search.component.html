@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill" color="accent" style="min-width: 100px;">
+    <mat-label>Kartvizit Ara</mat-label>
+    <input #searchText (keyup)="search(searchText.value)" matInput
+        placeholder="Başlık, numara, ad-soyad, firma adı, id ara" type="text">
+    <button aria-label="Clear" mat-icon-button matSuffix>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
