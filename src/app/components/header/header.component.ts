@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MatSlideToggleChange} from "@angular/material/slide-toggle";
 
+// import {MatSidenav} from "@angular/material/sidenav";
+
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
@@ -13,6 +15,15 @@ export class HeaderComponent implements OnInit {
 
     constructor() {
     }
+
+    /*    @ViewChild('sidenav', {static:false}) sidenav!: MatSidenav;
+        sidenavSmall:boolean = false;
+
+
+
+        sidenavToggle(){
+            this.sidenavSmall = !this.sidenavSmall;
+        }*/
 
     onDarkModeSwitched({checked}: MatSlideToggleChange) {
         this.darkModeSwitched.emit(checked);

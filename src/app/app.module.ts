@@ -16,6 +16,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatIconModule} from "@angular/material/icon";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatListModule} from "@angular/material/list";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
     declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent],
@@ -28,7 +34,13 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         // MatSidenavModule,
         MatSnackBarModule,
         MatSlideToggleModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatIconModule,
+        FlexLayoutModule,
+        MatListModule,
+        MatTabsModule,
+        MatMenuModule,
+        MatButtonModule
     ],
     providers: [{
         provide: 'apiUrl',
